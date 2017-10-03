@@ -5,12 +5,48 @@
     <title>Save form to PDF</title>
   </head>
   <body>
-    <form class="" action="index.html" method="post">
-      Name : <input type="text" name="name"> <br>
-      Password : <input type="password" name="pw"> <br>
-      <input type="submit" value="Submit">
+    <form id="test" method="post">
+      Name : <input type="text" name="name" id="name"> <br>
+      Password : <input type="password" name="pw" id ="pw"> <br>
+      <input id="create_pdf" type="submit" value="Submit">
     </form>
-
     <p>If you click the "Submit" button, the form-data will be save as PDF.</p>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+   </script>
+   <script type="text/javascript" src="//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js">
+   </script>
+   <script type="text/javascript" src="//cdn.rawgit.com/niklasvh/html2canvas/0.5.0-alpha2/dist/html2canvas.min.js">
+   </script>
+   <script type="text/javascript">
+     (function() {
+       var
+         form = $('.form'),
+         cache_width = form.width(),
+         a4 = [595.28, 841.89];
+
+       $('#create.pdf').on('click', function() {
+         var name = $('#name').val();
+         console.log(name);
+         $('body').scroppTop(0);
+         //createPDF();
+       });
+
+       // create pdf
+       function createPDF() {
+         getCanvas().then(function(canvas) {
+           var
+           img = canvas.toDataURL("image/png");
+           doc = new jsPDF({
+             unit: 'px',
+             format: 'a4'
+           });
+
+           doc.addImage(img, 'JPEG', 20, 20);
+           doc.save('technumber-html-to-pdf.pdf');
+           form.width(cache_width);
+         });
+       }
+     }());
+   </script>
   </body>
 </html>
