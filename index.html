@@ -11,30 +11,15 @@
       <input type="submit" name="submit" value="Submit">
     </form>
   </body>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
   $(document).ready(function() {
-    $('#myForm').submit(function(e) {
-      var $inputs = $('#myForm :input');
-
-      var values = {};
-      $inputs.each(function() {
-        values[this.name] = $(this).val();
-      });
+    $('#myForm').submit(function(){
+      //alert("submitted");
+      alert($(this).serialize());
+      return false;
     });
-    console.log($inputs);
-
-
-
-
-
-    // $('#myForm').submit(function(e) {
-    //   var myName = document.getElementById('name');
-    //   //var name = JSON.stringify(myName);
-    //   console.log("name : "+myName);
-    //   //e.prevenetDefault();
-    // });
   });
   </script>
 </html>
