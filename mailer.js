@@ -9,13 +9,13 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
   service: 'move2mobile.de',
   auth: {
     user: 'test@move2mobile.de',
-    pass: '123W_asd'
+    pass: ' '
   }
 });
 
 var mailOptions = {
   from : ' "Test Foo" <test@move2mobile.de>',
-  to: 'hj.lee@pinspot.de',
+  to: 'teo.have@pinspot.de',
   subject: "(test)Hello", // subject line
   text: 'Hello World?', // plain text body
   html: '<b>Hello</b> World' // html body
