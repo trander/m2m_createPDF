@@ -13,20 +13,5 @@
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function() {
-    $('#myForm').submit(function(){
-      //alert("submitted");
-      // get data
-      var data = $(this).serialize();
-      alert(data);
-
-      //create and save PDF
-      var doc = new jsPDF();
-      doc.text(data,10,10);
-      doc.save('a4.pdf');
-
-    });
-  });
-  </script>
+  <script type="text/javascript" src="app.js"></script>
 </html>
