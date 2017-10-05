@@ -1,5 +1,10 @@
 var nodemailer = require('nodemailer');
 
+nodemailer.createTestAccount((err, account) => {
+  var transporter = nodemailer.createTransport({
+    host: 'smtp.move2mobile.de'
+  })
+})
 var smtpTransport = nodemailer.createTransport("SMTP", {
   service: 'move2mobile.de',
   auth: {

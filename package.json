@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/trander/m2m_createPDF/issues"
   },
-  "homepage": "https://github.com/trander/m2m_createPDF#readme"
+  "homepage": "https://github.com/trander/m2m_createPDF#readme",
+  "dependencies": {
+    "express": "^4.16.1",
+    "nodemailer": "^4.1.2"
+  }
 }
